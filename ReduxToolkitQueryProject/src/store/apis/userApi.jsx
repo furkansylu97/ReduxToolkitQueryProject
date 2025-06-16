@@ -14,7 +14,18 @@ const usersApi = createApi({
                         method: 'GET'
                     }
                 }
-            })
+            }),
+            addUsers: builder.mutation.query({
+                query:() => {
+                    return {
+                        url: '/users',
+                        method: 'POST',
+                        body: {
+                            name:'İkra'
+                        }
+                    }
+                }
+            }),
         }
     }
 })
