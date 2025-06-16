@@ -1,0 +1,12 @@
+{
+    "users":[
+        {
+            "id": 1,
+            "name": "Selin Eren"
+          },
+          {           
+            "id": 3,
+            "name": "Furkan Soylu"
+          }
+    ]
+}
