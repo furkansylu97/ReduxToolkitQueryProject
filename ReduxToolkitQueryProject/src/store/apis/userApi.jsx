@@ -10,9 +10,9 @@ const usersApi = createApi({
     reducerPath: 'users',
     baseQuery:fetchBaseQuery({
         baseUrl: 'http://localhost:3000',
-        fetchFn: async(...args) => {
+        fetchFn: async(input, init) => {
             await delay(1000);
-            return fetch(args);
+            return fetch(input, init);
         }
     }),
     endpoints(builder) {
