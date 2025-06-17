@@ -18,6 +18,7 @@ const usersApi = createApi({
     endpoints(builder) {
         return {
             fetchUsers: builder.query({
+                providesTags:['User'],
                 query:() => {
                     return {
                         url: '/users',
@@ -26,6 +27,9 @@ const usersApi = createApi({
                 }
             }),
             addUser: builder.mutation({
+                invalidatesTags:() => {
+                    return [{type:'User'}];
+                },
                 query:() => {
                     return {
                         url: '/users',
@@ -37,6 +41,9 @@ const usersApi = createApi({
                 }
             }),
             removeUser: builder.mutation({
+                invalidatesTags:() => {
+                    return [{type:'User'}];
+                },
                 query:(user) => {
                     return {
                         url: `/users/${user.id}`,
