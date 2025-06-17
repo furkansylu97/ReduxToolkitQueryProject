@@ -1,0 +1,10 @@
+.TopArrangement{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.TopArrangement h1{
+    font-size: 20px;
+}
