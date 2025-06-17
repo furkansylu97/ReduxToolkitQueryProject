@@ -1,0 +1,58 @@
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { faker } from "@faker-js/faker";
+
+const delay = (duration) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, duration);
+  });
+};
+
+const albumsApi = createApi({
+  reducerPath: "albums",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "http://localhost:3000",
+    fetchFn: async (input, init) => {
+      await delay(1000);
+      return fetch(input, init);
+    },
+  }),
+  endpoints(builder) {
+    return {
+      fetchAlbums: builder.query({
+        query: (user) => {
+          return {
+            url: "/albums",
+            method: "GET",
+            params: {
+              userId: user.id,
+            },
+          };
+        },
+      }),
+      addAlbum: builder.mutation({
+        query: (user) => {
+          return {
+            url: "/albums",
+            method: "POST",
+            body: {
+              userId: user.id,
+              title: faker.commerce.productName(),
+            },
+          };
+        },
+      }),
+      removeAlbum: builder.mutation({
+        query: (album) => {
+          return {
+            url: `/albums/${album.id}`,
+            method: "DELETE",
+          };
+        },
+      }),
+    };
+  },
+});
+
+export const { useFetchAlbumsQuery, useAddAlbumMutation, useRemoveAlbumMutation } = albumsApi;
+
+export { albumsApi };

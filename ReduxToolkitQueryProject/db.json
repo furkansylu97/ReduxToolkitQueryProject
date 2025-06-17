@@ -12,5 +12,12 @@
       "id": "c771",
       "name": "Kara Mueller"
     }
+  ],
+  "albums": [
+    {
+      "userId": "3",
+      "title": "Malatya",
+      "id":"12"
+    }
   ]
 }
