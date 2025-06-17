@@ -1,25 +1,28 @@
-import React from 'react'
-import ExpandablePanel from './ExpandablePanel'
-import AlbumList from './AlbumList'
+import React from "react";
+import ExpandablePanel from "./ExpandablePanel";
+import AlbumList from "./AlbumList";
 import { GoTrash } from "react-icons/go";
-import { useRemoveUserMutation} from "../store";
+import { useRemoveUserMutation } from "../store";
+import CircularProgress from "@mui/material/CircularProgress";
 
-function UsersListItem({user}) {
-
+function UsersListItem({ user }) {
   const [removeUser, results] = useRemoveUserMutation();
 
   const handleClick = () => {
     removeUser(user);
-  }
+  };
 
   const header = (
     <>
-      <button style={{ marginRight: '20px', border: 'none' }} onClick={handleClick}>
-        <GoTrash />
+      <button
+        style={{ marginRight: "20px", border: "none", cursor: "pointer" }}
+        onClick={handleClick}
+      >
+        {results.isLoading ? <CircularProgress style={{ width: "20px", height: "20px" }}/> : <GoTrash />}
       </button>
       {user.name}
     </>
-  )
+  );
 
   return (
     <div>
@@ -27,7 +30,7 @@ function UsersListItem({user}) {
         <AlbumList user={user} />
       </ExpandablePanel>
     </div>
-  )
+  );
 }
 
-export default UsersListItem
+export default UsersListItem;
