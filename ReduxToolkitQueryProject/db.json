@@ -15,9 +15,9 @@
   ],
   "albums": [
     {
-      "userId": "3",
-      "title": "Malatya",
-      "id":"12"
+      "id": "12",
+      "userId": "1",
+      "title": "Balıkesir"   
     }
   ]
 }
