@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
+import { GoChevronLeft, GoChevronDown } from "react-icons/go";
 
-function ExpandablePanel({children}) {
+function ExpandablePanel({ header, children }) {
   return (
-    <div>
-        {children}
+    <div className="panelDiv">
+      <div className="contentsWrapper">
+        <div className="topArrangement">{header}</div>
+        <div>
+          <GoChevronLeft />
+        </div>
+      </div>
+
+      {children}
     </div>
-  )
+  );
 }
 
-export default ExpandablePanel
+export default ExpandablePanel;
