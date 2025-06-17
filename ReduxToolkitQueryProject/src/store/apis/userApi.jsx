@@ -25,7 +25,7 @@ const usersApi = createApi({
                     }
                 }
             }),
-            addUsers: builder.mutation({
+            addUser: builder.mutation({
                 query:() => {
                     return {
                         url: '/users',
@@ -36,7 +36,7 @@ const usersApi = createApi({
                     }
                 }
             }),
-            removeUsers: builder.mutation({
+            removeUser: builder.mutation({
                 query:(user) => {
                     return {
                         url: `/users/${user.id}`,
