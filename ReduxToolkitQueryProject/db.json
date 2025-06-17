@@ -17,7 +17,14 @@
     {
       "id": "12",
       "userId": "1",
-      "title": "Balıkesir"   
+      "title": "Balıkesir"
+    }
+  ],
+  "photos": [
+    {
+      "id": "f5b7",
+      "albumId": "12",
+      "url": "https://loremflickr.com/150/150?lock=7003726044099928"
     }
   ]
 }
