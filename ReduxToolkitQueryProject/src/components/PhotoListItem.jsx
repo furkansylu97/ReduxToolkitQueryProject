@@ -1,8 +1,10 @@
 import React from 'react'
 
-function PhotoListItem() {
+function PhotoListItem({photo}) {
   return (
-    <div>PhotoListItem</div>
+    <div style={ {margin:'20px' }}>
+      <img src={photo.url} alt="" />
+    </div>
   )
 }
 

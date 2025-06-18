@@ -42,7 +42,7 @@ function PhotoList({ album }) {
           </Button>
         </div>
       </div>
-      <div>{content}</div>
+      <div className="photoWrapper">{content}</div>
     </>
   );
 }
